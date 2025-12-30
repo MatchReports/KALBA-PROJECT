@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.terrain {
+ /* ce code est destiné à (desktop par défaut)*/
+  position: relative;
+  width: 95%; /*pour gérer la taille du terrain*/
+  max-width: 1260px; /*pour gérer la taille du terrain*/
+  max-height: 100vh; /* pour garantir que le stade ne dépasse jamais la hauteur de l’écran */
+  aspect-ratio: 16 / 9;    /* garde les bonnes proportions */
+}
+
+.terrain img { /*S’assurer que l’image s’adapte parfaitement à tous les écrans*/
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 100vh; /* pour garantir que le stade ne dépasse jamais la hauteur de l’écran */
+}
+
+.player {
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-family: Arial;
+  font-size: 13px;
+  width: auto; /*pour rendre le texte aligné avec la photo du joueur*/
+}
+
+.player img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.player > div {
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+  
+}
+
+
+
+/*Ceci est la répartition 4 4 2*/
+/*.p1 { top: 4%; left: 25%; }
+.p2 { top: 27%; left: 25%; }
+.p3 { top: 51%; left: 25%; }
+.p4 { top: 76%; left: 25%; }
+.p5 { top: 4%; left: 47%; }
+.p6 { top: 55%; left: 30%; }
+.p7 { top: 51%; left: 47%; }
+.p8 { top: 76%; left: 47%; }
+.p9 { top: 30%; left: 65%; }
+.p10 { top: 55%; left: 65%; }
+.p11 { top: 44%; left: 12%; }*/
+
+.p1 { top: 44%; left: 14%; }
+.p2 { top: 5%; left: 29%; }
+.p3 { top: 27%; left: 26%; }
+.p4 { top: 56%; left: 26%; }
+.p5 { top: 79%; left: 29%; }
+.p6 { top: 31%; left: 42%; }
+.p7 { top: 55%; left: 42%; }
+.p8 { top: 31%; left: 53%; }
+.p9 { top: 55%; left: 53%; }
+.p10 { top: 5%; left: 60%; }
+.p11 { top: 79%; left: 60%; }
+/* incertain players */
+.p12 { top: 5%; left: 19%; }
+.p13 { top: 29%; left: 65%; }
+.p14 { top: 29%; left: 75%; }
+.p15 { top: 54%; left: 75%; }
+
+
+
+.player-info {
+  margin-top: 5px;      /* espace entre image et texte */
+  text-align: center;    /* centre le texte sous la photo */
+
+}
+
+.player-info .name {  
+  color: black;
+  font-weight: bold;
+  font-size: 13px;  /* ajuste la taille du texte du nom du joueur */
+}
+
+.player-info .height {
+  color: black;
+  font-size: 13px;  /* ajuste la taille du texte de taille et pied du joueur */
+  font-weight: bold;
+  margin-top: 2px;
+  
+}
+
+/* ce code est pour MOBILE (téléphones) */ 
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .terrain {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .player img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .player-info .name {
+    font-size: 13px;
+  }
+
+  .player-info .height {
+    font-size: 11px;
+  }
+}
+
+
+/* ce code est pour GRAND ÉCRAN (ordinateur) */
+@media (min-width: 1200px) {
+  .terrain {
+    max-width: 1400px;
+  }
+
+  .player img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.player.incertain {
+  filter: grayscale(100%);
+  opacity: 0.60;
+}
+
+.player.incertain img {
+  filter: grayscale(100%);
+  opacity: 0.85;
+}
+
+.player.incertain .name,
+.player.incertain .height {
+  color: #111;   /* gris lisible */
+font-size: 10px;
+
+}
+
+
+
